@@ -23,17 +23,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt update && apt install -y libeigen3-dev
 
 # ROS Desktop packages
-RUN apt update && apt update && apt install -y ros-melodic-moveit \
-    apt install -y ros-melodic-ros-control \
-    apt install -y ros-melodic-ros-controllers \
-    apt install -y ros-melodic-geometry 
+RUN apt install -y ros-melodic-moveit && \ 
+    apt install -y ros-melodic-moveit-visual-tools
+
+RUN apt update && apt install -y ros-melodic-ros-control && \
+    apt install -y ros-melodic-ros-controllers && \
+    apt install -y ros-melodic-ros-controllers && \
+    apt install -y ros-melodic-geometry && \
+    apt install -y ros-melodic-tf2-bullet
+
 
 # Ros RQt/RViz/Gazebo packages
 
-RUN apt update && apt update && apt install -y ros-melodic-rqt \
-                                apt install -y ros-melodic-viz \
-                                apt install -y ros-melodic-gazebo-ros-pkgs \
-                                apt install -y ros-melodic-gazebo-ros-control
-
-# MoveIt! Install
-RUN apt update && apt update && apt install -y ros-melodic-moveit \
+RUN apt update && apt install -y ros-melodic-rqt && \
+    apt install -y ros-melodic-viz && \
+    apt install -y ros-melodic-gazebo-ros-pkgs && \
+    apt install -y ros-melodic-gazebo-ros-control
