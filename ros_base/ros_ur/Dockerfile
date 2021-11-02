@@ -8,7 +8,8 @@ RUN apt install -y qt4-default
 
 # UR library required
 RUN apt install -y ros-melodic-ur-client-library && \ 
-    apt install -y ros-melodic-industrial-robot-status-interface
+    apt install -y ros-melodic-industrial-robot-status-interface \
+    apt install -y ros-melodic-ur-msgs
 
 # FCL installation required for Collision checker
 # ( "sed command" remove check_required_components macro that cause  compilation error )
